@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список школ</title>
+    <link rel="stylesheet" type="text/css" href={{url_for('static', filename='css/style.css')}}>
+    <style type="text/css">
+    </style>
+</head>
+<body>
+    <form action="/">
+        <input type="submit" value="Главная страница" />
+    </form>
+    {%for i in schools%}
+    <h2>{{i.school_name}}</h2>
+    {%if i.link%}
+        <img src="{{i.link}}"  height="30%"  width="30%">
+    {%endif%}
+    <div>средние результаты егэ: {{i.res_ege}}</div>
+    <a href="https://yandex.ru/maps/2/saint-petersburg/search/{{i.school_name}}">Найти на карте</a>
+    {% endfor %}
+</body>
+</html>

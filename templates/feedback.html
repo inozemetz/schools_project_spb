@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Отзывы</title>
+    <link rel="stylesheet" type="text/css" href={{url_for('static', filename='css/style.css')}}>
+    <style type="text/css">
+    </style>
+</head>
+<body>
+    <form action="/">
+        <input type="submit" value="Главная страница" />
+    </form>
+    <form action="/feedback" method="POST">
+        <textarea name="search_all" id="my_input"></textarea>
+            <input id="my_submit" type="submit" value="Отправить отзыв">
+      </form>
+    <h1>Пожелания, предложения, жалобы</h1>
+    {%for i in reviews%}
+    <p>{{i.review}}</p>
+    {% endfor %}
+</div>
+</body>
+</html>
